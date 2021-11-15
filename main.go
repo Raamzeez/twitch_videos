@@ -72,7 +72,8 @@ func fetchUserId(context *gin.Context, username string, baseUserURL string, bear
 	apiURL := baseUserURL + "?login=" + username
 	req, err := http.NewRequest("GET", apiURL, nil)
 	if err != nil {
-		panic(err)
+		errorResponse := Response{Status: http.StatusUnauthorized, Message: []string{"HTTP Client failed to initialize"}, Error: []string{err.Error()}}
+		sendResponse(context, errorResponse)
 	}
 	req.Header.Add("Authorization", bearer)
 	req.Header.Add("Client-id", CLIENT_ID)
