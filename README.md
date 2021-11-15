@@ -11,4 +11,4 @@ How To Run:
 4. Run the server - `go main.go`
 5. Access the API Endpoint
    >1. Go to your web browser and type `http://localhost:8080/user/{TWITCH_USERNAME_HERE}`
-   >2. Use an application such as Postman and access the API Endpoint. Make sure to set appropriate OAuth fields 
+   >2. Use an application such as Postman and access the API Endpoint.
