@@ -133,9 +133,7 @@ func main() {
 			sendResponse(context, errorResponse)
 		}
 		json.Unmarshal([]byte(body), &json_data)
-		context.JSON(200, gin.H{
-			"response": string(body),
-		})
+		context.JSON(200, json_data)
 	})
 	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
